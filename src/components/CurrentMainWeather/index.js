@@ -12,12 +12,10 @@ const CurrentMainWeather = () => {
         <h4 className='current-main-weather-info_degree'> +16 c </h4>
         <span> Sunny </span>
       </div>
-
         <FontAwesomeIcon
           className='current-main-weather-icon'
           icon={faSun}
         />
-
     </div>
   )
 }

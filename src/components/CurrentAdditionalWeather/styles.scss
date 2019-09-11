@@ -1,0 +1,21 @@
+@import '../../assets/variables';
+
+.current-additional-weather {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  justify-content: space-evenly;
+  margin-left: 30px;
+
+  &-list {
+    color: $mainLight;
+    font-weight: bold;
+
+    &_name {
+
+    }
+    &_item {
+      margin-left: 30px;
+    }
+  }
+}
