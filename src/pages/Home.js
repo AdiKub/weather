@@ -1,9 +1,13 @@
 import React from 'react'
+import WeatherDetail from "../components/WeatherDetail";
+import WeatherTitleWithForm from "../components/WeatherTitleWithForm";
+import '../assets/main.scss'
 
 const Home = () => {
   return (
-    <div className='container'>
-
+    <div>
+      <WeatherTitleWithForm />
+      <WeatherDetail />
     </div>
   )
 }

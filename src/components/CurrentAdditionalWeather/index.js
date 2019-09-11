@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles.scss';
 
-const AdditionalCurrentWeather = () => {
+const CurrentAdditionalWeather = () => {
   return (
     <div className='contact-card'>
 
@@ -10,4 +10,4 @@ const AdditionalCurrentWeather = () => {
   )
 }
 
-export default AdditionalCurrentWeather;
+export default CurrentAdditionalWeather;

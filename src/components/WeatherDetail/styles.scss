@@ -1,0 +1,15 @@
+@import '../../assets/variables';
+
+.weather-detail {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  background-color: #acb1bf;
+  position: relative;
+  z-index: 1;
+
+  &-map-wrapper {
+    z-index: 0;
+    position: absolute;
+  }
+}

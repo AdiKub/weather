@@ -1,0 +1,17 @@
+@import '../../assets/variables';
+
+.today-weather {
+  width: 100%;
+  height: 150px;
+  background-color: $mainBackgroundColor;
+  display: flex;
+  justify-content: center;
+
+  &-current {
+    height: 100%;
+  }
+
+  &-other-time {
+
+  }
+}

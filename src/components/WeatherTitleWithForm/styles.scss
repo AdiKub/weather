@@ -1,0 +1,28 @@
+@import '../../assets/variables';
+
+
+.weather-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 100%;
+  background-color: $mainBackgroundColor;
+  margin-top: 50px;
+  margin-bottom: 5px;
+
+  &_text {
+    color: $mainLight;
+    font-size: 32px;
+  }
+
+  &-form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    &_input {
+      height: 25px;
+      width: 200px;
+    }
+  }
+}
