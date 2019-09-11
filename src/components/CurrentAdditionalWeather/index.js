@@ -13,7 +13,6 @@ const CurrentAdditionalWeather = () => {
 
   return (
     <div className='current-additional-weather'>
-
       <div className='current-additional-weather-list'>
         <span className='current-additional-weather-list_name'>
           Wind:

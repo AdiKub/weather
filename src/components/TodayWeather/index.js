@@ -15,6 +15,7 @@ const TodayWeather = () => {
         </div>
         <div className='today-weather-other-time'>
           <OtherTimeWeather/>
+          <OtherTimeWeather/>
         </div>
       </div>
     </div>

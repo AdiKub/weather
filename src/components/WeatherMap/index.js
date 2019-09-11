@@ -4,7 +4,7 @@ import './styles.scss';
 
 const WeatherMap = () => {
   return (
-    <div className='contact-card'>
+    <div className='weather-map'>
 
     </div>
   )

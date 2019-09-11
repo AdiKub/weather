@@ -1,1 +1,18 @@
 @import '../../assets/variables';
+
+.other-time-weather {
+  height: 130px;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  color: $mainLight;
+  font-weight: bold;
+  margin-left: 50px;
+  //align-items: center;
+
+  &_icon {
+    color: #e1ba1f;
+    height: 50px;
+    font-size: 36px;
+  }
+}
