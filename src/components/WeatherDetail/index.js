@@ -3,16 +3,15 @@ import React from 'react';
 import TodayWeather from "../TodayWeather";
 import WeatherMap from "../WeatherMap";
 import OtherDaysWeathers from "../OtherDaysWeathers";
-
+import WeatherTitleWithForm from "../WeatherTitleWithForm";
 import './styles.scss';
 
 const WeatherDetail = () => {
   return (
     <div className='weather-detail'>
+      <WeatherTitleWithForm/>
       <TodayWeather/>
-      <div className='weather-detail-map-wrapper'>
-        <WeatherMap/>
-      </div>
+      <WeatherMap/>
       <OtherDaysWeathers/>
     </div>
   )

@@ -3,8 +3,8 @@
 .other-days-weathers {
   display: flex;
   justify-content: center;
-  height: 150px;
+  align-items: center;
+  min-height: 150px;
   width: 100%;
   background-color: $mainBackgroundColor;
-  opacity: 0.8;
 }

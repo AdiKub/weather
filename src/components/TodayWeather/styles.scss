@@ -2,11 +2,11 @@
 
 .today-weather {
   width: 100%;
-  height: 150px;
+  min-height: 150px;
   background-color: $mainBackgroundColor;
-  opacity: 0.8;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   &-current {
     height: 100%;

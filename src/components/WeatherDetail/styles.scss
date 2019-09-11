@@ -3,14 +3,8 @@
 .weather-detail {
   display: flex;
   flex-direction: column;
-  height: 600px;
-  background-color: #acb1bf;
-  position: relative;
+  height: 100%;
+  width: 100%;
   justify-content: space-between;
-  z-index: 1;
 
-  &-map-wrapper {
-    z-index: 0;
-    position: absolute;
-  }
 }
