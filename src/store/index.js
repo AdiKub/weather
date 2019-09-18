@@ -1,19 +1,26 @@
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga'
+import { createLogger } from 'redux-logger'
+import mainReducer from './main/reducers';
+import mainSaga from './main/sagas';
 
-const INITIAL_STATE = {
-  location: {},
-}
+const sagaMiddleware = createSagaMiddleware();
 
-const weather = (state=INITIAL_STATE, action) => {
-  switch (action.type) {
-    case 'SET_LOCATION':
-      return { ...state, location: action.title }
-    default:
-      return state;
-  }
-}
+const logger = createLogger({
+  level: 'info',
+  duration: true,
+  collapsed: true
+});
 
-const store = createStore(weather);
+const store = createStore(
+  mainReducer,
+  applyMiddleware(
+    sagaMiddleware,
+    logger
+  )
+);
 
-export default store;
+sagaMiddleware.run(mainSaga);
+
+export default store

@@ -13,7 +13,7 @@ const WeatherMap = () => {
         bootstrapURLKeys={{key: 'AIzaSyDbWXT-YxZ4GmJBVsDS17q8wYKMjbK2KFM'}}
         defaultCenter={{lng: city.coord.lon, lat: city.coord.lat}}
         defaultZoom={10}
-        yesIWantToUseGoogleMapApiInternals
+        onClick={(e)=>console.log(e)}
       >
         <MapMarker
           lat={city.coord.lat}

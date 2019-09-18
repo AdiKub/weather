@@ -7,14 +7,14 @@ import './styles.scss';
 const OtherTimeWeather = () => {
   return (
     <div className='other-time-weather'>
-      <span> time </span>
+      <span className='other-time-weather-text'> time </span>
       <FontAwesomeIcon
         className='other-time-weather_icon'
         icon={faSun}
       />
-      <span> +10c  </span>
-      <span> 0.3 m/s </span>
-      <span> 1024 hpa </span>
+      <span className='other-time-weather-text'> +10c  </span>
+      <span className='other-time-weather-text'> 0.3 m/s </span>
+      <span className='other-time-weather-text'> 1024 hpa </span>
     </div>
   )
 }

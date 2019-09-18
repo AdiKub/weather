@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import './styles.scss';
 
-const WeatherTitleWithForm = () => {
+const WeatherTitleWithForm = (props) => {
+  const { getCurrentWeatherStart } = props;
+
+  useEffect(()=> {
+
+  });
+
   return (
     <div className='weather-title'>
       <div className='container'>
