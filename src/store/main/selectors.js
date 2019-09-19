@@ -1,7 +1,3 @@
 
-export const initialState = {
-    currentWeather: {},
-    futureWeather: {}
-}
-
+export
 export const getState = ( state = initialState ) => state || initialState;
