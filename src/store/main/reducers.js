@@ -1,31 +1,23 @@
 import {
-  GET_CURRENT_WEATHER_SUCCESS,
-  GET_FUTURE_WEATHER_SUCCESS,
-  GET_CURRENT_WEATHER_FAILED
+  GET_CURRENT_WEATHER,
+  GET_FUTURE_WEATHER,
 } from './actionTypes';
+import { initialState } from './selectors';
 
-const initialState = {
-  currentWeather: {},
-  futureWeather: {},
-  error: ''
-};
-const main = (state = initialState, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
-    case GET_CURRENT_WEATHER_SUCCESS:
-      return Object.assign({}, state, {
+    case GET_CURRENT_WEATHER:
+      console.log(action.currentWeather)
+      return {
+        ...state,
         currentWeather: action.currentWeather
-      });
-    case GET_FUTURE_WEATHER_SUCCESS:
-      return Object.assign({}, state, {
+      };
+    case GET_FUTURE_WEATHER:
+      return {
+        ...state,
         futureWeather: action.futureWeather
-      });
-    case GET_CURRENT_WEATHER_FAILED:
-      return Object.assign({}, state, {
-        error: action.e
-      });
+      };
     default:
       return state
   }
 };
-
-export default main;

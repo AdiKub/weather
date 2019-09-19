@@ -1,33 +1,18 @@
 import {
-  GET_CURRENT_WEATHER_START,
-  GET_CURRENT_WEATHER_SUCCESS,
-  GET_FUTURE_WEATHER_START,
-  GET_FUTURE_WEATHER_SUCCESS,
-  GET_CURRENT_WEATHER_FAILED
+  GET_CURRENT_WEATHER,
+  GET_FUTURE_WEATHER,
 } from './actionTypes';
 
-export const getCurrentWeatherStart = ()=> {
+export const getCurrentWeather = (coords)=> {
   return {
-    type: GET_CURRENT_WEATHER_START
+    type: GET_CURRENT_WEATHER,
+    coords
   }
 };
 
-export const getCurrentWeatherSuccess = (currentWeather) => {
+export const getFutureWeather = (futureSuccess) => {
   return {
-    type: GET_CURRENT_WEATHER_SUCCESS,
-    currentWeather
-  }
-};
-
-export const getFutureWeatherSuccess = (futureSuccess) => {
-  return {
-    type: GET_FUTURE_WEATHER_SUCCESS,
+    type: GET_FUTURE_WEATHER,
     futureSuccess
-  }
-};
-export const getCurrentWeatherFailed = (error) => {
-  return {
-    type: GET_CURRENT_WEATHER_FAILED,
-    error
   }
 };

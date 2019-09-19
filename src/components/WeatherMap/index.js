@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
 import GoogleMapReact from 'google-map-react';
 
 import MapMarker from '../MapMarker';
 import './styles.scss';
-import city from '../../city.json'
+import city from '../../city.json';
 
-const WeatherMap = () => {
+const WeatherMap = (props) => {
+  const { getCurrentWeather } = props;
+
+  useEffect(()=> {
+    navigator.geolocation &&
+    navigator.geolocation.getCurrentPosition(getPositionWeather)
+  }, []);
+
+  const getPositionWeather=(position)=> {
+    const coords = {
+      lat: position.coords.latitude,
+      lon: position.coords.longitude
+    };
+    getCurrentWeather(coords)
+  };
 
   return (
     <div className='weather-map'>
