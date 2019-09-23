@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import './styles.scss';
 
 const WeatherTitleWithForm = (props) => {
   const { getCurrentWeatherAction } = props;
 
-  // useEffect(() => console.log());
+  //useEffect(() => );
 
   return (
     <div className='weather-title'>

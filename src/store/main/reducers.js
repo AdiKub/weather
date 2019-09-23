@@ -1,24 +1,19 @@
 import { GET_CURRENT_WEATHER, GET_FUTURE_WEATHER } from './actionTypes';
+import { initialState } from './selectors';
 
-const initialState = {
-  currentWeather: {},
-  futureWeather: {}
-};
-
-export default (state = initialState, action) => {
+const main = (state = initialState, action) => {
   switch (action.type) {
     case GET_CURRENT_WEATHER:
-      console.log(initialState, 'reducer')
-      return {
-        ...state,
-        currentWeather: action.currentWeather
-      };
+      return Object.assign({}, state, {
+        currentWeatherStore: action.currentWeather
+      })
     case GET_FUTURE_WEATHER:
-      return {
-        ...state,
-        futureWeather: action.futureWeather
-      };
+      return Object.assign({}, state, {
+        futureWeatherStore: action.futureWeather
+      })
     default:
       return state
   }
 };
+
+export default main;

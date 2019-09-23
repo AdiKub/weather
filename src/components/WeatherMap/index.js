@@ -6,19 +6,19 @@ import './styles.scss';
 import city from '../../city.json';
 
 const WeatherMap = (props) => {
-  const { getCurrentWeather } = props;
+  const { getWeatherStartAction } = props;
 
   useEffect(()=> {
     navigator.geolocation &&
     navigator.geolocation.getCurrentPosition(getPositionWeather)
   }, []);
 
-  const getPositionWeather=(position)=> {
+  const getPositionWeather =(position)=> {
     const coords = {
       lat: position.coords.latitude,
       lon: position.coords.longitude
     };
-    getCurrentWeather(coords)
+    getWeatherStartAction(coords)
   };
 
   return (
@@ -27,7 +27,7 @@ const WeatherMap = (props) => {
         bootstrapURLKeys={{key: 'AIzaSyDbWXT-YxZ4GmJBVsDS17q8wYKMjbK2KFM'}}
         defaultCenter={{lng: city.coord.lon, lat: city.coord.lat}}
         defaultZoom={10}
-        onClick={(e)=>console.log(e)}
+        onClick={(e)=> console.log(e)}
       >
         <MapMarker
           lat={city.coord.lat}

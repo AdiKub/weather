@@ -1,7 +1,13 @@
 import {
   GET_CURRENT_WEATHER,
   GET_FUTURE_WEATHER,
+  GET_WEATHER_START,
 } from './actionTypes';
+
+export const getWeatherStart = coords => ({
+  type: GET_WEATHER_START,
+  coords,
+});
 
 export const getCurrentWeather = (coords)=> {
   return {
@@ -10,9 +16,23 @@ export const getCurrentWeather = (coords)=> {
   }
 };
 
-export const getFutureWeather = (futureSuccess) => {
+export const getFutureWeather = (futureWeather) => {
   return {
     type: GET_FUTURE_WEATHER,
-    futureSuccess
+    futureWeather
+  }
+};
+
+export const getCurrentWeatherFailure = (currentWeatherFailure) => {
+  return {
+    type: GET_FUTURE_WEATHER,
+    currentWeatherFailure
+  }
+};
+
+export const getFutureWeatherFailure = (futureWeatherFailure) => {
+  return {
+    type: GET_FUTURE_WEATHER,
+    futureWeatherFailure
   }
 };
