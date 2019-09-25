@@ -15,7 +15,11 @@
     font-size: 18px;
 
     &_degree {
-      font-size: 64px;
+      font-size: 56px;
+    }
+
+    &_description {
+      text-transform: capitalize;
     }
   }
 

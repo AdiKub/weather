@@ -3,7 +3,8 @@ import React from 'react';
 import './styles.scss';
 import weather from '../../city.json';
 
-const CurrentAdditionalWeather = () => {
+const CurrentAdditionalWeather = (props) => {
+  const { currentWeatherStore } = props;
 
   const getTime=(unix)=>{
     const hour = new Date(unix*1000).getHours()
@@ -18,7 +19,7 @@ const CurrentAdditionalWeather = () => {
           Wind:
         </span>
         <span className='current-additional-weather-list_item'>
-          {weather.wind.speed} m/s
+          {currentWeatherStore.wind.speed} m/s
         </span>
       </div>
       <div className='current-additional-weather-list'>
@@ -26,7 +27,7 @@ const CurrentAdditionalWeather = () => {
           Cloudiness:
         </span>
         <span className='current-additional-weather-list_item'>
-          {weather.clouds.all} %  {weather.weather[0].description}
+          {currentWeatherStore.clouds.all} %  {weather.weather[0].description}
         </span>
       </div>
       <div className='current-additional-weather-list'>
@@ -34,7 +35,7 @@ const CurrentAdditionalWeather = () => {
           Pressure:
         </span>
         <span className='current-additional-weather-list_item'>
-          {weather.main.pressure} hpa
+          {currentWeatherStore.main.pressure} hpa
         </span>
       </div>
       <div className='current-additional-weather-list'>
@@ -42,7 +43,7 @@ const CurrentAdditionalWeather = () => {
           Humidity:
         </span>
         <span className='current-additional-weather-list_item'>
-          {weather.main.humidity} %
+          {currentWeatherStore.main.humidity} %
         </span>
       </div>
       <div className='current-additional-weather-list'>
@@ -50,7 +51,7 @@ const CurrentAdditionalWeather = () => {
           Sunrise:
         </span>
         <span className='current-additional-weather-list_item'>
-          {getTime(weather.sys.sunrise)}
+          {getTime(currentWeatherStore.sys.sunrise)}
         </span>
       </div>
       <div className='current-additional-weather-list'>
@@ -58,7 +59,7 @@ const CurrentAdditionalWeather = () => {
           Sunset:
         </span>
         <span className='current-additional-weather-list_item'>
-          {getTime(weather.sys.sunset)}
+          {getTime(currentWeatherStore.sys.sunset)}
         </span>
       </div>
     </div>

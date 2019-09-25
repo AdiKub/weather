@@ -7,8 +7,8 @@ import WeatherTitleWithForm from '../../components/WeatherTitleWithForm';
 const WeatherTitleWithFormContainer = props => <WeatherTitleWithForm {...props} />;
 
 const mapStateToProps = store => ({
-  currentWeather: store.currentWeather,
-  error: store.error,
+  currentWeatherStore: store.currentWeatherStore,
+  futureWeatherStore: store.futureWeatherStore,
 });
 
 const mapDispatchToProps = dispatch => ({

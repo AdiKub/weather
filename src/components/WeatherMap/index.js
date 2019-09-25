@@ -1,19 +1,22 @@
-import React, { useEffect }  from 'react';
+import React, { useEffect } from 'react';
 import GoogleMapReact from 'google-map-react';
 
 import MapMarker from '../MapMarker';
 import './styles.scss';
-import city from '../../city.json';
 
 const WeatherMap = (props) => {
-  const { getWeatherStartAction } = props;
-
-  useEffect(()=> {
-    navigator.geolocation &&
-    navigator.geolocation.getCurrentPosition(getPositionWeather)
+  const { getWeatherStartAction, currentWeatherStore } = props;
+  const count = Object.keys(currentWeatherStore).length
+  const googleKey = 'AIzaSyDbWXT-YxZ4GmJBVsDS17q8wYKMjbK2KFM'
+  
+  useEffect(() => {
+    if (!count) {
+      navigator.geolocation &&
+      navigator.geolocation.getCurrentPosition(getPositionWeather)
+    }
   }, []);
 
-  const getPositionWeather =(position)=> {
+  const getPositionWeather = (position) => {
     const coords = {
       lat: position.coords.latitude,
       lon: position.coords.longitude
@@ -23,17 +26,22 @@ const WeatherMap = (props) => {
 
   return (
     <div className='weather-map'>
-      <GoogleMapReact
-        bootstrapURLKeys={{key: 'AIzaSyDbWXT-YxZ4GmJBVsDS17q8wYKMjbK2KFM'}}
-        defaultCenter={{lng: city.coord.lon, lat: city.coord.lat}}
-        defaultZoom={10}
-        onClick={(e)=> console.log(e)}
-      >
-        <MapMarker
-          lat={city.coord.lat}
-          lng={city.coord.lon}
-        />
-      </GoogleMapReact>
+      {count &&
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: googleKey }}
+          defaultCenter={{
+            lng: currentWeatherStore.coord.lon,
+            lat: currentWeatherStore.coord.lat
+          }}
+          defaultZoom={10}
+          onClick={(e) => getWeatherStartAction({lat: e.lat, lon: e.lng})}
+        >
+          <MapMarker
+            lat={currentWeatherStore.coord.lat}
+            lng={currentWeatherStore.coord.lon}
+          />
+        </GoogleMapReact>
+      }
     </div>
   );
 };

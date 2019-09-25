@@ -6,8 +6,12 @@ import WeatherMap from '../../components/WeatherMap';
 
 const WeatherMapContainer = props => <WeatherMap {...props} />;
 
+const mapStateToProps = store => ({
+  currentWeatherStore: store.currentWeatherStore,
+});
+
 const mapDispatchToProps = dispatch => ({
   getWeatherStartAction: (coords = {}) => dispatch(getWeatherStart(coords)),
 });
 
-export default connect(null, mapDispatchToProps)(WeatherMapContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(WeatherMapContainer);

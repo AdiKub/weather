@@ -9,10 +9,10 @@ export const getWeatherStart = coords => ({
   coords,
 });
 
-export const getCurrentWeather = (coords)=> {
+export const getCurrentWeather = (currentWeather)=> {
   return {
     type: GET_CURRENT_WEATHER,
-    coords
+    currentWeather
   }
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TodayWeather from "../TodayWeather";
+import TodayWeatherContainer from "../../container/TodayWeatherContainer";
 import OtherDaysWeathers from "../OtherDaysWeathers";
 import WeatherMapContainer from "../../container/WeatherMapContainer";
 import WeatherTitleWithFormContainer from "../../container/WeatherTitleWithFormContainer";
@@ -11,7 +11,7 @@ const WeatherDetail = () => {
   return (
     <div className='weather-detail'>
       <WeatherTitleWithFormContainer/>
-      <TodayWeather/>
+      <TodayWeatherContainer/>
       <WeatherMapContainer/>
       <OtherDaysWeathers/>
     </div>

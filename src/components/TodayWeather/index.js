@@ -5,19 +5,22 @@ import CurrentMainWeather from "../CurrentMainWeather";
 import './styles.scss';
 import OtherTimeWeather from "../OtherTimeWeather";
 
-const TodayWeather = () => {
+const TodayWeather = (props) => {
+  const { currentWeatherStore, futureWeatherStore } = props;
+  const count = Object.keys(currentWeatherStore).length
   return (
     <div className='today-weather'>
+      {count &&
       <div className='container'>
-        <div className='today-weather-current'>
-          <CurrentMainWeather/>
-          <CurrentAdditionalWeather/>
-        </div>
+         <div className='today-weather-current'>
+         <CurrentMainWeather currentWeatherStore={currentWeatherStore}/>
+         <CurrentAdditionalWeather currentWeatherStore={currentWeatherStore}/>
+       </div>
         <div className='today-weather-other-time'>
           <OtherTimeWeather/>
           <OtherTimeWeather/>
         </div>
-      </div>
+      </div>}
     </div>
   )
 }

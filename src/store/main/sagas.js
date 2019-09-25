@@ -23,8 +23,7 @@ import {
       yield put(actions.getFutureWeatherFailure(responseError));
     }
   }
-  
-  
+     
   export function* watchCreateCurrentWeather() {
     while (true) {
       const { coords } = yield take(actionTypes.GET_WEATHER_START);
