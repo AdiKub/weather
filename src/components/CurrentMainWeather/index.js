@@ -9,7 +9,6 @@ const CurrentMainWeather = (props) => {
   const { currentWeatherStore } = props;
   const date = moment(currentWeatherStore.dt*1000).format('MMM Do YY');
   const time = moment(currentWeatherStore.dt*1000).format('LT');
-  console.log(currentWeatherStore.dt)
 
     return (
       <div className='current-main-weather'>

@@ -5,15 +5,26 @@ import './styles.scss';
 
 const OtherDaysWeathers = (props) => {
   const { futureWeatherStore } = props;
-  const count = Object.keys(futureWeatherStore).length;
-  const arr = [3,6,9,12,15,17,20]
+  const otherDayweather = [];
+
+  futureWeatherStore.list && futureWeatherStore.list.map((w)=>{
+    const todayDate = new Date().getDate()
+    const otherDate = new Date(w.dt*1000).getDate()
+    const otherHours = new Date(w.dt*1000).getHours()
+    
+    if (todayDate !== otherDate && otherHours === 15 ){
+      otherDayweather.push(w)
+    } 
+  })
+  console.log(otherDayweather)
+  const arr = [3,7,11,15,19,23,27,31]
   return (
     <div className='other-days-weathers'>
       <div className='container'>
-        {count && arr.map(otherTime=>(
+        {otherDayweather.length === 5 && otherDayweather.map(otherTime=>(
           <OtherTimeWeather 
-            key={otherTime} 
-            weather={futureWeatherStore.list[otherTime]}/>
+            key={otherTime.dt} 
+            weather={otherTime}/>
         ))}
       </div>
     </div>

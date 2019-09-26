@@ -18,7 +18,7 @@ const OtherTimeWeather = (props) => {
         className='other-time-weather_icon'
         icon={faSun}
       />
-      <span className='other-time-weather-text'> {temp}c </span>
+      <span className='other-time-weather-text'> {temp} c </span>
       <span className='other-time-weather-text'> {wind} m/s </span>
       <span className='other-time-weather-text'> {pressure} hpa </span>
     </div>
