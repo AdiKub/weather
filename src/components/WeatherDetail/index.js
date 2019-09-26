@@ -1,7 +1,7 @@
 import React from 'react';
 
 import TodayWeatherContainer from "../../container/TodayWeatherContainer";
-import OtherDaysWeathers from "../OtherDaysWeathers";
+import OtherDaysWeathersContainer from "../../container/OtherDaysWeathersContainer";
 import WeatherMapContainer from "../../container/WeatherMapContainer";
 import WeatherTitleWithFormContainer from "../../container/WeatherTitleWithFormContainer";
 import './styles.scss';
@@ -13,7 +13,7 @@ const WeatherDetail = () => {
       <WeatherTitleWithFormContainer/>
       <TodayWeatherContainer/>
       <WeatherMapContainer/>
-      <OtherDaysWeathers/>
+      <OtherDaysWeathersContainer/>
     </div>
   )
 };

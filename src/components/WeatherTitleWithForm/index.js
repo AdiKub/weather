@@ -1,16 +1,18 @@
-import React, { useEffect } from 'react';
-
+import React from 'react';
+import {  getName } from 'country-list';
 import './styles.scss';
 
 const WeatherTitleWithForm = (props) => {
-  const { getCurrentWeatherAction, currentWeatherStore, futureWeatherStore } = props;
-  useEffect(() => {});
+  const { currentWeatherStore } = props;
+  const count = Object.keys(currentWeatherStore).length;
 
   return (
     <div className='weather-title'>
       <div className='container'>
         <h2 className='weather-title_text'>
-          {currentWeatherStore.name} Kyrgyzstan
+          {count && `${currentWeatherStore.name} 
+            ${currentWeatherStore.sys.country ? 
+            getName(currentWeatherStore.sys.country) : '?'}`} 
         </h2>
         <div className='weather-title-form'>
           <input className='weather-title-form_input'/>
@@ -18,6 +20,6 @@ const WeatherTitleWithForm = (props) => {
       </div>
     </div>
   )
-}
+};
 
 export default WeatherTitleWithForm;

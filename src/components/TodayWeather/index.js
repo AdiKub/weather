@@ -7,22 +7,28 @@ import OtherTimeWeather from "../OtherTimeWeather";
 
 const TodayWeather = (props) => {
   const { currentWeatherStore, futureWeatherStore } = props;
-  const count = Object.keys(currentWeatherStore).length
+  const count = Object.keys(currentWeatherStore).length;
+  const count2 = Object.keys(futureWeatherStore).length;
   return (
-    <div className='today-weather'>
-      {count &&
+    <div className='today-weather'> 
       <div className='container'>
-         <div className='today-weather-current'>
-         <CurrentMainWeather currentWeatherStore={currentWeatherStore}/>
-         <CurrentAdditionalWeather currentWeatherStore={currentWeatherStore}/>
-       </div>
-        <div className='today-weather-other-time'>
-          <OtherTimeWeather/>
-          <OtherTimeWeather/>
-        </div>
-      </div>}
+        {count &&
+          <div className='today-weather-current'>
+          <CurrentMainWeather currentWeatherStore={currentWeatherStore}/>
+          <CurrentAdditionalWeather currentWeatherStore={currentWeatherStore}/>
+          </div>
+        }
+        {count2 && 
+          <div className='today-weather-other-time'>
+            {[0, 1, 2].map(weatherindex => 
+              <OtherTimeWeather 
+                key={futureWeatherStore.list[weatherindex].dt} 
+                weather={futureWeatherStore.list[weatherindex]}/>
+              )}
+          </div>}
+      </div>
     </div>
   )
-}
+};
 
 export default TodayWeather;

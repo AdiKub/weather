@@ -1,17 +1,14 @@
 import React from 'react';
+import moment from 'moment'
 
 import './styles.scss';
 import weather from '../../city.json';
 
 const CurrentAdditionalWeather = (props) => {
   const { currentWeatherStore } = props;
-
-  const getTime=(unix)=>{
-    const hour = new Date(unix*1000).getHours()
-    const min = new Date(unix*1000).getMinutes()
-    return hour+' : '+min
-  }
-
+  const sunrise = moment(currentWeatherStore.sys.sunrise*1000).format('LT');
+  const sunset = moment(currentWeatherStore.sys.sunset*1000).format('LT');
+ 
   return (
     <div className='current-additional-weather'>
       <div className='current-additional-weather-list'>
@@ -51,7 +48,7 @@ const CurrentAdditionalWeather = (props) => {
           Sunrise:
         </span>
         <span className='current-additional-weather-list_item'>
-          {getTime(currentWeatherStore.sys.sunrise)}
+          {sunrise}
         </span>
       </div>
       <div className='current-additional-weather-list'>
@@ -59,7 +56,7 @@ const CurrentAdditionalWeather = (props) => {
           Sunset:
         </span>
         <span className='current-additional-weather-list_item'>
-          {getTime(currentWeatherStore.sys.sunset)}
+          {sunset}
         </span>
       </div>
     </div>
