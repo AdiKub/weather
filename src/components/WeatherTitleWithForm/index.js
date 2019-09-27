@@ -1,7 +1,7 @@
 import React from 'react';
 import { getName } from 'country-list';
 
-import GoogleMapReact from 'google-map-react';
+import LocationSearchInputContainer from '../../container/LocationSearchInputContainer';
 
 import './styles.scss';
 
@@ -17,7 +17,7 @@ const WeatherTitleWithForm = (props) => {
             getName(currentWeatherStore.sys.country) : '?'}`} 
         </h2>
         <div className='weather-title-form'>
-         <input className='weather-title-form_input'></input>
+         <LocationSearchInputContainer/>
         </div>
       </div>
     </div>

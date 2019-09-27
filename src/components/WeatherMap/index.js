@@ -30,8 +30,12 @@ const WeatherMap = (props) => {
         <GoogleMapReact
           bootstrapURLKeys={{ key: googleKey }}
           defaultCenter={{
-            lng: 74.61,
-            lat: 42.87,
+            lat: currentWeatherStore.coord.lat,
+            lng: currentWeatherStore.coord.lon,
+          }}
+          center={{
+            lat: currentWeatherStore.coord.lat,
+            lng: currentWeatherStore.coord.lon,
           }}
           defaultZoom={10}
           onClick={(e) => getWeatherStartAction({lat: e.lat, lon: e.lng})}
