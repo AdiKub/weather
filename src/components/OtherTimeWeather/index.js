@@ -5,7 +5,9 @@ import './styles.scss';
 const OtherTimeWeather = (props) => {
   const { weather } = props;
 
-  const time = moment(weather.dt*1000).calendar();
+  const date = moment(weather.dt*1000).format('ddd Do MMM');
+  const hours = new Date(weather.dt*1000).getHours();
+  const time = moment(weather.dt*1000).format('H');
   const temp = Math.floor(weather.main.temp - 273)
   const wind = weather.wind.speed
   const pressure = weather.main.pressure
@@ -13,7 +15,8 @@ const OtherTimeWeather = (props) => {
 
   return (
     <div  className='other-time-weather'>
-      <span className='other-time-weather-text'> {time} </span>
+      <span className='other-time-weather-text'> {date} </span>
+      <span className='other-time-weather-text'> {hours === 3 ? 'night':'day'} </span>
         <img
           alt='icon'
           src={wIcon} 

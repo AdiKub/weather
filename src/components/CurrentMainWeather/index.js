@@ -5,8 +5,8 @@ import './styles.scss';
 
 const CurrentMainWeather = (props) => {
   const { currentWeatherStore } = props;
-  const date = moment(currentWeatherStore.dt*1000).format('MMM Do YY');
-  const time = moment(currentWeatherStore.dt*1000).format('LT');
+  const date = moment(currentWeatherStore.dt*1000).format('Do MMM YY');
+  const time = moment(currentWeatherStore.dt*1000).format('ddd HH:mm');
   const wIcon = `http://openweathermap.org/img/wn/${currentWeatherStore.weather[0].icon}@2x.png`;
 
     return (
