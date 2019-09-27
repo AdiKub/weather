@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import PlacesAutocomplete from 'reactjs-places-autocomplete';
-import { getName, getCode } from 'country-list';
 import Geocode from "react-geocode";
 
 import './styles.scss';
 
 const LocationSearchInput = (props) => {
-  const { getWeatherStartAction } = props
-  const [inputValue, onInput] = useState('')
+  const { getWeatherStartAction } = props;
+  const [inputValue, onInput] = useState('');
   Geocode.setApiKey("AIzaSyDbWXT-YxZ4GmJBVsDS17q8wYKMjbK2KFM");
+
   const handleChange = address => {
     onInput(address)
   };

@@ -8,7 +8,7 @@ const CurrentMainWeather = (props) => {
   const date = moment(currentWeatherStore.dt*1000).format('MMM Do YY');
   const time = moment(currentWeatherStore.dt*1000).format('LT');
   const wIcon = `http://openweathermap.org/img/wn/${currentWeatherStore.weather[0].icon}@2x.png`;
-  console.log(wIcon)
+
     return (
       <div className='current-main-weather'>
         <div className='current-main-weather-info'>

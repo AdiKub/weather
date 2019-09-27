@@ -1,0 +1,17 @@
+{
+  "cnt": 40,
+  "list": [],
+  "city": {
+    "id": 1528675,
+    "name": "Bishkek",
+    "coord": {
+      "lat": 42.8767,
+      "lon": 74.607
+    },
+    "country": "KG",
+    "population": 0,
+    "timezone": 0,
+    "sunrise": 0,
+    "sunset": 0
+  }
+}

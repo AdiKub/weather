@@ -5,21 +5,23 @@ import './styles.scss';
 
 const OtherDaysWeathers = (props) => {
   const { futureWeatherStore } = props;
-  const otherDayweather = [];
+  const otherDayWeather = [];
 
-  futureWeatherStore.list && futureWeatherStore.list.map((w)=>{
-    const todayDate = new Date().getDate()
-    const otherDate = new Date(w.dt*1000).getDate()
-    const otherHours = new Date(w.dt*1000).getHours()
+  futureWeatherStore.list.length && futureWeatherStore.list.map((weather)=>{
+    const todayDate = new Date().getDate();
+    const otherDate = new Date(weather.dt*1000).getDate();
+    const otherHours = new Date(weather.dt*1000).getHours();
+    // eslint-disable-next-line no-mixed-operators
     if (todayDate !== otherDate && otherHours === 15 || otherHours === 3){
-        otherDayweather.push(w)
-    } 
-    return otherDayweather
-  })
+        otherDayWeather.push(weather)
+    }
+    return otherDayWeather
+  });
+
   return (
     <div className='other-days-weathers'>
       <div className='container'>
-        {otherDayweather.length >= 4 && otherDayweather.slice(0, 8).map(otherTime=>(
+        {otherDayWeather.slice(0, 8).map(otherTime=>(
           <OtherTimeWeather 
             key={otherTime.dt} 
             weather={otherTime}/>

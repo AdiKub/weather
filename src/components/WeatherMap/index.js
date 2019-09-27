@@ -6,15 +6,13 @@ import './styles.scss';
 
 const WeatherMap = (props) => {
   const { getWeatherStartAction, currentWeatherStore } = props;
-  const count = Object.keys(currentWeatherStore).length;
+
   const googleKey = 'AIzaSyDbWXT-YxZ4GmJBVsDS17q8wYKMjbK2KFM';
-  
+
   useEffect(() => {
-    if (!count) {
-      navigator.geolocation &&
+    navigator.geolocation &&
       navigator.geolocation.getCurrentPosition(getPositionWeather)
-    }
-  });
+  }, []);
 
   const getPositionWeather = (position) => {
     const coords = {
@@ -26,28 +24,27 @@ const WeatherMap = (props) => {
 
   return (
     <div className='weather-map'>
-      {count ?
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: googleKey }}
-          defaultCenter={{
-            lat: currentWeatherStore.coord.lat,
-            lng: currentWeatherStore.coord.lon,
-          }}
-          center={{
-            lat: currentWeatherStore.coord.lat,
-            lng: currentWeatherStore.coord.lon,
-          }}
-          defaultZoom={10}
-          onClick={(e) => getWeatherStartAction({lat: e.lat, lon: e.lng})}
-        >
-          <MapMarker
-            lat={currentWeatherStore.coord.lat}
-            lng={currentWeatherStore.coord.lon}
-          />
-        </GoogleMapReact> : 
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: googleKey }}
+        defaultCenter={{
+          lat: 42.85,
+          lng: 74.59,
+        }}
+        center={{
+          lat: currentWeatherStore.coord.lat,
+          lng: currentWeatherStore.coord.lon,
+        }}
+        defaultZoom={10}
+        onClick={(e) => getWeatherStartAction({ lat: e.lat, lon: e.lng })}
+      >
+        <MapMarker
+          lat={currentWeatherStore.coord.lat}
+          lng={currentWeatherStore.coord.lon}
+        />
+      </GoogleMapReact> :
         <div>
-        </div>
-      }
+      </div>
+
     </div>
   );
 };

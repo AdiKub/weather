@@ -2,7 +2,6 @@ import React from 'react';
 import moment from 'moment'
 
 import './styles.scss';
-import weather from '../../city.json';
 
 const CurrentAdditionalWeather = (props) => {
   const { currentWeatherStore } = props;
@@ -24,7 +23,7 @@ const CurrentAdditionalWeather = (props) => {
           Cloudiness:
         </span>
         <span className='current-additional-weather-list_item'>
-          {currentWeatherStore.clouds.all} %  {weather.weather[0].description}
+          {currentWeatherStore.clouds.all} %  {currentWeatherStore.weather[0].description}
         </span>
       </div>
       <div className='current-additional-weather-list'>

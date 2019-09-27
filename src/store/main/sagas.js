@@ -7,21 +7,19 @@ import {
   
   
   export function* createCurrentWeather(coords) {
-    try {
-      const response = yield call(api.currentWeatherRequest,  coords);
-      yield put(actions.getCurrentWeather(response));
-    } catch (responseError) {
-      yield put(actions.getCurrentWeatherFailure(responseError));
-    }
+    const response = yield call(api.currentWeatherRequest,  coords);
+    if (response)
+    yield put(actions.getCurrentWeather(response));
+    else
+    yield put(actions.getCurrentWeatherFailure(response));
   }
   
   export function* createFutureWeather(coords) {
-    try {
-      const response = yield call(api.futureWeatherRequest,  coords);
-      yield put(actions.getFutureWeather(response));
-    } catch (responseError) {
-      yield put(actions.getFutureWeatherFailure(responseError));
-    }
+    const response = yield call(api.futureWeatherRequest,  coords);
+    if (response)
+    yield put(actions.getFutureWeather(response));
+    else
+    yield put(actions.getFutureWeatherFailure(response));
   }
      
   export function* watchCreateCurrentWeather() {
