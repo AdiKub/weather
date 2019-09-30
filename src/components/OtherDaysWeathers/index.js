@@ -12,7 +12,7 @@ const OtherDaysWeathers = (props) => {
     const otherDate = new Date(weather.dt*1000).getDate();
     const otherHours = new Date(weather.dt*1000).getHours();
     // eslint-disable-next-line no-mixed-operators
-    if (todayDate !== otherDate && otherHours === 15 || otherHours === 3){
+    if (todayDate !== otherDate && (otherHours === 15 || otherHours === 21)){
         otherDayWeather.push(weather)
     }
     return otherDayWeather

@@ -5,8 +5,8 @@ import './styles.scss';
 
 const CurrentAdditionalWeather = (props) => {
   const { currentWeatherStore } = props;
-  const sunrise = moment(currentWeatherStore.sys.sunrise*1000).format('LT');
-  const sunset = moment(currentWeatherStore.sys.sunset*1000).format('LT');
+  const sunrise = moment(currentWeatherStore.sys.sunrise*1000).format('HH:mm');
+  const sunset = moment(currentWeatherStore.sys.sunset*1000).format('HH:mm');
  
   return (
     <div className='current-additional-weather'>
