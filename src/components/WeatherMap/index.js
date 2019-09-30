@@ -6,8 +6,7 @@ import './styles.scss';
 
 const WeatherMap = (props) => {
   const { getWeatherStartAction, currentWeatherStore } = props;
-
-  const googleKey = 'AIzaSyDbWXT-YxZ4GmJBVsDS17q8wYKMjbK2KFM';
+  const MAP_KEY = process.env.GOOGLE_MAP_KEY;
 
   useEffect(() => {
     navigator.geolocation &&
@@ -25,7 +24,7 @@ const WeatherMap = (props) => {
   return (
     <div className='weather-map'>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: googleKey }}
+        bootstrapURLKeys={{ key: MAP_KEY }}
         defaultCenter={{
           lat: 42.85,
           lng: 74.59,
