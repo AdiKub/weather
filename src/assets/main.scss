@@ -41,9 +41,13 @@ button, input {
     max-width: 1140px;
   }
 
-
+  @media screen and (max-width: 991px) {
+    padding: 0 20px;    
+  }
   @media screen and (max-width: 767px) {
     padding: 20px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   @media screen and (max-width: 576px) {
     padding: 10px 5px;

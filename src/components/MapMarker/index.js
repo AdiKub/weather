@@ -3,14 +3,13 @@ import React from 'react';
 import './styles.scss';
 
 const MapMarker = () => {
-
   return (
     <div>
       <div
         className="pin bounce"
-        style={{cursor: 'pointer'}}
+        style={{ cursor: 'pointer' }}
       />
-      <div className="pulse"/>
+      <div className="pulse" />
     </div>
   );
 };

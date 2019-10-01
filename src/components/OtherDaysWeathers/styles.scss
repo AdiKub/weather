@@ -7,6 +7,20 @@
   min-height: 150px;
   width: 100%;
   background-color: $mainBackgroundColor;
+
+  &-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 767px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @media screen and (max-width: 576px) {
+      
+    }
+  }
   
   .container {
     justify-content: space-between;

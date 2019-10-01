@@ -11,12 +11,15 @@ const WeatherTitleWithForm = (props) => {
   return (
     <div className='weather-title'>
       <div className='container'>
-        <h2 className='weather-title_text'>
-          {currentWeatherStore.name + ' '}
-          {currentWeatherStore.sys.country ? getName(currentWeatherStore.sys.country) : ''}
-        </h2>
-        <div className='weather-title-form'>
-         <LocationSearchInputContainer/>
+        <div className='weather-title-wrapper'>
+          <h2 className='weather-title_text'>
+            {currentWeatherStore.name + ' '}
+            {currentWeatherStore.sys.country ? // getName() always needs some value so we should use condition
+              getName(currentWeatherStore.sys.country) : ''}
+          </h2> 
+          <div className='weather-title-form'>
+          <LocationSearchInputContainer/>
+          </div>
         </div>
       </div>
     </div>

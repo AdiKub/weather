@@ -9,11 +9,10 @@ const WeatherMap = (props) => {
   const MAP_KEY = process.env.GOOGLE_MAP_KEY;
 
   useEffect(() => {
-    navigator.geolocation &&
-      navigator.geolocation.getCurrentPosition(getPositionWeather)
+    navigator.geolocation.getCurrentPosition(getPositionWeather)
   }, []);
 
-  const getPositionWeather = (position) => {
+  const getPositionWeather = (position) => {   // makes a request with current place position coordinates
     const coords = {
       lat: position.coords.latitude,
       lon: position.coords.longitude
@@ -41,9 +40,8 @@ const WeatherMap = (props) => {
           lng={currentWeatherStore.coord.lon}
         />
       </GoogleMapReact> :
-        <div>
+      <div>
       </div>
-
     </div>
   );
 };

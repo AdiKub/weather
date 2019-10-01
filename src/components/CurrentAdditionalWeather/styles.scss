@@ -6,6 +6,10 @@
   height: 80%;
   margin-left: 30px;
 
+  @media screen and (max-width: 576px) {
+    margin-left: 0px;
+  }
+
   &-list {
     min-width: 165px;
     font-size: 12px;
@@ -13,7 +17,7 @@
     display: flex;
 
     &_name {
-      width: 90px;
+      min-width: 90px;
     }
   }
 }

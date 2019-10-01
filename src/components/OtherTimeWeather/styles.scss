@@ -1,13 +1,24 @@
 @import '../../assets/variables';
 
 .other-time-weather {
-  height: 110px;
+  height: 120px;
   justify-content: space-around;
   display: flex;
   flex-direction: column;
   color: $mainLight;
   align-items: center;
-  margin-left: 20px;
+  margin: 0 10px;
+
+  @media screen and (max-width: 992px) {
+    margin: 20px 0;
+  }
+  @media screen and (max-width: 767px) {
+    margin: 10px 20px;
+  }
+  @media screen and (max-width: 576px) {
+    margin: 10px 15px;
+  }
+
 
   &-text {
     font-size: 12px;
