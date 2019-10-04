@@ -1,25 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+   This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+### After loading install all dependencies
 
-Runs the app in the development mode.<br>
+```sh
+$ npm install 
+```
+
+### Runs the app in the development mode
+
+```sh
+$ npm start 
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
+The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-### `npm test`
+### Launches the test runner in the interactive watch mode
+```sh
+$ npm test 
+``` 
 
-Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
+### Builds the app for production to the `build` folder
+```sh
+$ npm run build 
+``` 
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br>
@@ -27,8 +38,10 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
+### If you aren’t satisfied with the build tool and configuration choices, you can eject at any time
+```sh
+$ npm run eject 
+``` 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
@@ -37,32 +50,27 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Weather project uses a number of open source projects to work properly:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* [react-redux] - Redux is a predictable state container for JavaScript apps.
+* [reactjs-places-autocomplete] - A React component to build a customized UI for Google Maps Places Autocomplete.
+* [redux-logger] - is a production Redux logging tool that lets you replay problems as if they happened in your own browser.
+* [axios] - Make XMLHttpRequests from the browse.
+* [redux-saga] - is a library that aims to make application side effects (i.e. asynchronous things like data fetching and impure things like accessing the browser cache) easier to manage, more efficient to execute, easy to test, and better at handling failures.
+* [moment] - Parse, validate, manipulate, and display dates and times in JavaScript.
+* [google-map-react]  is a component written over a small set of the Google Maps API. It allows you to render any React component on the Google Map.
+* [country-list] - Countries, Languages & Continents data
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Attention 
 
-### Code Splitting
+- reactjs-places-autocomplete
+- google-map-react
+- axios 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+needs key for work. you must create a file called .env in the root of your project's directory. Inside the .env file write follow  
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```sh
+REACT_APP_GOOGLE_MAP_KEY = 'yourkey'
+REACT_APP_OPENWEATHER_API_KEY = 'yourkey'
+```
+   
