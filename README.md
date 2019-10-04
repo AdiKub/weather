@@ -50,7 +50,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Weather project uses a number of open source projects to work properly:
+## Weather project uses a number of open source libraries to work properly:
 
 * [react-redux] - Redux is a predictable state container for JavaScript apps.
 * [reactjs-places-autocomplete] - A React component to build a customized UI for Google Maps Places Autocomplete.
@@ -67,7 +67,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 - google-map-react
 - axios 
 
-needs key for work. you must create a file called .env in the root of your project's directory. Inside the .env file write follow  
+needs key for work. you must create a file called .env in the root of your project's directory. Inside the .env file, write follows  
 
 ```sh
 REACT_APP_GOOGLE_MAP_KEY = 'yourkey'
