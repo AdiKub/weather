@@ -6,7 +6,7 @@ import './styles.scss';
 
 const WeatherMap = (props) => {
   const { getWeatherStartAction, currentWeatherStore } = props;
-  const MAP_KEY = process.env.GOOGLE_MAP_KEY;
+  const MAP_KEY = process.env.REACT_APP_GOOGLE_MAP_KEY;
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(getPositionWeather)

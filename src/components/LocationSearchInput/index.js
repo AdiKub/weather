@@ -7,7 +7,7 @@ import './styles.scss';
 const LocationSearchInput = (props) => {
   const { getWeatherStartAction } = props;
   const [inputValue, onInput] = useState('');
-  const MAP_KEY = process.env.GOOGLE_MAP_KEY;
+  const MAP_KEY = process.env.REACT_APP_GOOGLE_MAP_KEY;
   Geocode.setApiKey(MAP_KEY);
 
   const handleChange = address => {      // sets input value to useState
